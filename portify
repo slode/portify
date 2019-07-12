@@ -1,13 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Script to make a virtual env essentially portable. Rewrites shebangs and
 # modifies the VIRTUAL_ENV root folder.
 
 PORTIFIED_WATERMARK="# portified"
-grep "$PORTIFIED_WATERMARK" $1/bin/activate && exit()
+grep "$PORTIFIED_WATERMARK" $1/bin/activate && exit
 
 # We only need to portify once.
-echo "$PORTIFIED_WATERMARK" >> $1/bin/activate
+echo $PORTIFIED_WATERMARK >> $1/bin/activate
 
 # Modify the shebang of all scripts on each activation
 echo "find \$VIRTUAL_ENV -type f -print0 | \
