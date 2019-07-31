@@ -7,5 +7,5 @@ move the virtual environment around.
 
 ```bash
 python3 -m venv --copies portable_python
-portify python3
+portify portable_python
 ```
